@@ -1,0 +1,219 @@
+/* Global Layout */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* Color, Font, Links */
+
+body {
+	font-family: 'Nothing You Could Do', cursive;
+	font-weight: 300;
+	font-size: 1em;
+
+	color: black;
+}
+
+body,
+header,
+input[type="text"] {
+	background-color: #fff;
+
+	/*border-bottom: black solid 1px;*/
+}
+
+/* Page Structure 
+*****************/
+a {
+	text-decoration: none;
+	/*font-size: 0;*/
+}
+
+.wrap {
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+img {
+	max-width: 800px;
+}
+
+/* Search Box
+************/
+
+header {
+	height: 100px;
+	width: 100%;
+	
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+form {
+	text-align: center;
+}
+
+.searchbox {
+	font-size: 12pt;
+	width: 275px;
+	height: 40px;
+	/*background: none;*/
+	padding: 10px;
+
+	display: inline-block;
+	margin-top: 30px;
+
+	border-radius: 5px;
+	border: #e5e5e5 solid 2px;
+}
+
+/******** Gallery
+****************/
+
+section.wrap {
+	margin: 80px auto 55px;
+	text-align: center;
+}
+
+.gallery img {
+	/*margin-top: 28px;*/
+	margin-top: 30px; 
+	border: 8px solid white;
+
+	border-bottom: 35px solid white;
+	box-shadow: 2px 2px 5px #222;
+}
+
+.gallery p {
+	font-weight: 400;
+	color: #222;
+	margin-top: -33px;
+	margin-bottom: 0;
+}
+
+/******* Overlay 
+***************/
+
+/*#overlay {
+	background: rgba(60,60,60, .97);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+	text-align: center;
+	line-height: 3em;
+}
+
+/*#overlay img {
+	margin-top: 30%;
+	height: auto;
+}*/
+
+/*#overlay img,
+.caption {
+	width: 90%;
+}
+
+#overlay img {
+	margin-top: 50px;
+}	
+
+.caption {
+	color: #fff;
+	margin: auto; 
+}
+
+button {
+	color: white;
+	background: transparent;
+	border: none;
+
+	display: block;
+	float: left;
+	margin-top: 200px;
+	margin-left: 200px; 
+	
+}*/
+
+/*.arrow {
+	margin-top: 200px;
+	margin-left: 0; 
+	float: left;
+	
+
+}
+
+.arrow #arrow-l {
+	width: 100%;
+	height: 100%;
+}*/
+
+
+/* Swipebox*/
+
+#swipebox-slider .slide img {
+	vertical-align: middle;
+	max-height: 300px;
+	max-width: 100%;
+}
+
+#swipebox-top-bar {
+	font-family: inherit;
+}
+
+
+/*** Media Queries 
+*****************/
+
+@media screen and (min-width: 760px) {
+	
+	.gallery {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		flex-direction: row;
+	}
+
+	.gallery img {
+		/*margin: 28px;*/
+		margin-top: 60px;  
+	}
+
+	.gallery {
+		text-align: left;
+	}
+
+	.searchbox {
+		width: 460px;
+	}
+
+	#swipebox-slider .slide img {
+	vertical-align: middle;
+	max-height: 500px;
+	max-width: 800px;
+}
+
+	
+}
+
+@media screen and (min-width: 1024px) {
+
+	.wrap {
+		max-width: 990px;
+	}	
+
+	.gallery img {
+		margin: 28px 5px;
+	}
+	
+	.gallery p {
+		margin-top: -60px;
+		margin-bottom: 0;
+	}
+
+
+}
