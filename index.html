@@ -12,12 +12,12 @@
 	</head>
 <body>
 	<header>
-		<form action="#" class="filter-form">
-	  	<input type="text" placeholder="Search Images" name="gallerysearch" class="searchbox filter-input">
-		</form>
+		<div id="search">
+	  	<input type="text" placeholder="Search Images" class="searchbox" id="filter_search">
+		</div>
 	</header>
 
-	<section class="gallery wrap">
+	<section class="gallery wrap" id="gallery">
 			<a href="img/01.jpg"  class="swipebox" title="I love hay bales. Took this snap on a drive through the countryside past some straw fields.">
 				<img src="img/thumbnails/01.jpg" alt="Hay Bales">
 				<p>Hay Bales</p>
@@ -67,27 +67,27 @@
 				<img src="img/thumbnails/12.jpg" alt="Bluebells">
 				<p>Bluebells</p>
 			</a>
-			<a class="swipebox-video" rel="youtube" href="https://www.youtube.com/watch?v=SfnuApqiDBA">
-				<img src="img/thumbnails/jack-johnson.jpg" alt="video">
+			<a class="swipebox-video" rel="youtube" href="https://www.youtube.com/watch?v=SfnuApqiDBA" title="Banana Pancakes Song Music Video">
+				<img src="img/thumbnails/jack-johnson.jpg" alt="Banana Pancakes Video">
 				<p>Banana Pancakes</p>
 			</a>
-			<a class="swipebox-video" rel="youtube" href="https://www.youtube.com/watch?v=GB2yiIoEtXw">
-				<img src="img/thumbnails/good-morning.jpg" alt="video">
+			<a class="swipebox-video" rel="youtube" href="https://www.youtube.com/watch?v=GB2yiIoEtXw" title="Good Morning Song Music Video">
+				<img src="img/thumbnails/good-morning.jpg" alt="Good Morning Video">
 				<p>Good Morning</p>
 			</a>
-			<a class="swipebox-video" rel="youtube" href="https://www.youtube.com/watch?v=1rPDfBfh8zI">
-				<img src="img/thumbnails/hello-sunshine.jpg" alt="video">
+			<a class="swipebox-video" rel="youtube" href="https://www.youtube.com/watch?v=1rPDfBfh8zI" title="Hello Sunshine Song Music Video">
+				<img src="img/thumbnails/hello-sunshine.jpg" alt="Hello Sunshine Video">
 				<p>Hello Sunshine</p>
 			</a>
-			<a class="swipebox-video" rel="youtube" href="https://www.youtube.com/watch?v=pw1ahI_o388&list=PL3F626ZNDznkj_6fgWM-nCzTaVkXNPb5R">
-				<img src="img/thumbnails/zoo.jpg" alt="video">
+			<a class="swipebox-video" rel="youtube" href="https://www.youtube.com/watch?v=pw1ahI_o388&list=PL3F626ZNDznkj_6fgWM-nCzTaVkXNPb5R" title="We Bought A Zoo Playlist Song Music Video">
+				<img src="img/thumbnails/zoo.jpg" alt="We Bought A Zoo Playlist">
 				<p>We Bought A Zoo Playlist</p>
 			</a>
 	</section>
 
-			
 
 	<script src="js/swipebox-master/lib/jquery-2.1.0.min.js"></script>
+	<script src="js/image_filter.js"></script>
 	<script src="js/swipebox-master/src/js/jquery.swipebox.min.js"></script>
 	<script type="text/javascript">
 		$('.swipebox').swipebox({
