@@ -3,41 +3,48 @@
 var $overlay = $('<div id="overlay"></div>');
 var $image = $("<img>");
 var $caption = $("<p class='caption'></p>");
-var $leftbutton = $('<div class="arrow"> <-- </div> ');
+var $leftButton = $('<button class="arrow-l"></button>');
+var $rightButton = $('<button class="arrow-r"></button>');
 
-// <img src="img/left-arrow.png" id="arrow-l">
 
-// // Add Left and Right Buttons
-$overlay.append($leftbutton);
-// An image to overlay
-$overlay.append($image);
+// CREATE, APPEND, AND SHOW OVERLAY
 
-// A caption to overlay
-$overlay.append($caption);
+		// An image to overlay
+		$overlay.append($image);
 
-	
-// Add overlay
-$("body").append($overlay);
-	
+		// Add Left Button
+		$overlay.append($leftButton);
+		// Add Right Button
+		$overlay.append($rightButton);
 
-// Capture the click event on the link to an image
-$(".gallery a").click(function(event){
-	event.preventDefault();
-	var imageLocation = $(this).attr("href");
-	// Update overlay with the image linked in the link.
-	$image.attr("src", imageLocation);
+		// A caption to overlay
+		$overlay.append($caption);
 
-	// Show the overlay.
-	$overlay.show();
+			
+		// Add overlay
+		$("body").append($overlay);
+			
 
-	// Get child's alt attribute and set caption.
-	var captionText = $(this).children("img").attr("alt");
-	$caption.text(captionText);
+		// Capture the click event on the link to an image
+		$(".gallery a").click(function(event){
+			event.preventDefault();
+			var imageLocation = $(this).attr("href");
+			// Update overlay with the image linked in the link.
+			$image.attr("src", imageLocation);
 
-});	
+			// Show the overlay.
+			$overlay.show();
 
-// When overlay is clicked
-$overlay.click(function(){
-	// Hide the overlay
-	$overlay.hide();
-});
+			// Get child's alt attribute and set caption.
+			var captionText = $(this).attr("title");
+			$caption.text(captionText);
+
+		});	
+
+//DISABLE OVERLAY
+
+		//When overlay is clicked
+		$overlay.click(function(){
+			// Hide the overlay
+			$overlay.hide();
+		});

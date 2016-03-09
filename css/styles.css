@@ -28,6 +28,7 @@ input[type="text"] {
 a {
 	text-decoration: none;
 	/*font-size: 0;*/
+	transitions: ;
 }
 
 .wrap {
@@ -96,8 +97,8 @@ section.wrap {
 /******* Overlay 
 ***************/
 
-/*#overlay {
-	background: rgba(60,60,60, .97);
+#overlay {
+	background-color: #0d0d0d; /* gray w/ transparency: rgba(60,60,60, .97) */
 	width: 100%;
 	height: 100%;
 	position: fixed;
@@ -108,19 +109,15 @@ section.wrap {
 	line-height: 3em;
 }
 
-/*#overlay img {
-	margin-top: 30%;
+#overlay img {
+	margin-top: 60px;
 	height: auto;
-}*/
+}
 
-/*#overlay img,
+#overlay img,
 .caption {
 	width: 90%;
 }
-
-#overlay img {
-	margin-top: 50px;
-}	
 
 .caption {
 	color: #fff;
@@ -128,34 +125,35 @@ section.wrap {
 }
 
 button {
-	color: white;
-	background: transparent;
 	border: none;
-
-	display: block;
-	float: left;
-	margin-top: 200px;
-	margin-left: 200px; 
-	
-}*/
-
-/*.arrow {
-	margin-top: 200px;
-	margin-left: 0; 
-	float: left;
-	
-
+	outline: none;
 }
 
-.arrow #arrow-l {
-	width: 100%;
-	height: 100%;
-}*/
+.arrow-l,
+.arrow-r {
+	display: inline-block;
+	background: url(../img/arrow-icons.png);
+  background-repeat: no-repeat;
+  cursor: pointer;
+  width: 23px;
+  height: 36px;
+	margin-top: 300px;
+}
 
+.arrow-l {
+	margin-left: 200px;
+  float: left;
+}
 
-/* Swipebox*/
+.arrow-r {
+	margin-right: 200px;
+	background-position: -46px 0;
+  float: right;
+}
 
-#swipebox-slider .slide img {
+/* Swipebox */
+
+/*#swipebox-slider .slide img {
 	vertical-align: middle;
 	max-height: 300px;
 	max-width: 100%;
@@ -163,6 +161,14 @@ button {
 
 #swipebox-top-bar {
 	font-family: inherit;
+}
+*/
+
+
+/* Keyframes */
+
+@-webkit-keyframes slide {
+
 }
 
 
@@ -191,12 +197,12 @@ button {
 		width: 460px;
 	}
 
-	#swipebox-slider .slide img {
+/*	#swipebox-slider .slide img {
 	vertical-align: middle;
 	max-height: 500px;
 	max-width: 800px;
 }
-
+*/
 	
 }
 
