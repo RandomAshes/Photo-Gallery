@@ -218,23 +218,22 @@ button {
 	max-width: 800px;
 	max-height: 500px
 	}
-
-		/* 760px: Overlay: Landscape */
-
-	@media all and (orientation:landscape) {
-	    /* Styles for Landscape screen */
-		#overlayContent {	
-			height: initial;
-			width: 90%;
-		}	
-
-		.caption {
-			margin: 1em 0;
-		}	
-	}
 	
 }
 
+/* 760px: Overlay: Landscape */
+
+@media all and (min-width: 760px) and (orientation:landscape) {
+   /* Styles for Landscape screen */
+	#overlayContent {	
+		height: initial;
+		width: 90%;
+	}	
+
+	.caption {
+		margin: 1em 0;
+	}	
+}
 
 
 @media screen and (min-width: 1024px) {
