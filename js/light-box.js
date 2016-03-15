@@ -26,7 +26,7 @@ var updateImage = function(imageLocation, imageCaption){
 	  $image.attr("src", imageLocation);
 	  //update caption
 	  $caption.text(imageCaption);
-}
+};
 
 // CREATE and APPEND Overlay
 
@@ -99,7 +99,7 @@ var updateImage = function(imageLocation, imageCaption){
 
 		  //Update Overlay
 		  updateImage(imageLocation, imageCaption);
-		}
+		};
 
 		console.log($index);
 
