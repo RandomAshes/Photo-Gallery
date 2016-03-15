@@ -137,6 +137,7 @@ section.wrap {
 	display: block;
 	color: #fff;
 	max-width: 600px;
+	height: 150px;
 }
 
 button {
@@ -206,7 +207,6 @@ button {
 	}
 
 	.gallery img {
-		/*margin: 28px;*/
 		margin-top: 60px;  
 	}
 
@@ -217,14 +217,18 @@ button {
 	/* 760px: Overlay */
 
 	.overlay-img {
-	max-width: 800px;
-	max-height: 500px
+		max-width: 800px;
+		max-height: 500px
+	}
+
+	.caption {
+		height: 75px;
 	}
 
 	.x-button {
-	align-self: flex-end;
-	background-position: 0 0;
-}
+		align-self: flex-end;
+		background-position: 0 0;
+	}
 	
 }
 
