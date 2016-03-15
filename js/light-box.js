@@ -1,5 +1,4 @@
-//Ashley's Jquery LightBox
-
+//ASHLEY's JQUERY LIGHTBOX -- March 2016
 
 // Elements to append
 var $overlay = $('<div id="overlay"></div>');
@@ -18,107 +17,121 @@ var $index = 0;
 // (needed so we know when we are at last image)
 var $galleryLength = $("#gallery a").length -1;
 
-console.log($galleryLength);
-
 //Function to update overlay image and caption
 var updateImage = function(imageLocation, imageCaption){
-	  //update image
-	  $image.attr("src", imageLocation);
-	  //update caption
-	  $caption.text(imageCaption);
+  //update image
+  $image.attr("src", imageLocation);
+  //update caption
+  $caption.text(imageCaption);
 };
 
 // CREATE and APPEND Overlay
 
+// Add Left Button to overlayContent
+$overlayContent.append($leftButton);
 
-		// Add Left Button
-		$overlayContent.append($leftButton);
+// Add image to overlayContent
+$overlayContent.append($image);
 
-		// An image to overlay
-		$overlayContent.append($image);
+// Add Right Button to overlayContent
+$overlayContent.append($rightButton);
 
-		// Add Right Button
-		$overlayContent.append($rightButton);
+// Add caption to overlayContent
+$overlayContent.append($caption);
 
-		// A caption to overlay
-		$overlayContent.append($caption);
+// Add exit-overlay button to overlay
+$overlay.append($XButton);
+
+// Add overlayContent to overlay
+$overlay.append($overlayContent);
+
+// Add overlay to index.html
+$("body").append($overlay);
 		
-		// Add exit-overlay button
-		$overlay.append($XButton);
+// SHOW OVERLAY and UPDATE INDEX
 
-		$overlay.append($overlayContent);
+// Capture click when gallery image is clicked on
+$(".gallery a").click(function(event){
+	event.preventDefault();
 
-		// Add overlay
-		$("body").append($overlay);
-		
+	var imageLocation = $(this).attr("href");
+	var imageCaption = $(this).attr("title");
 
-// SHOW OVERLAY and update INDEX
+	// give $index the current image's index value	
+	$index = $(this).index();
 
-		// Capture the click event on the link to an image
-		$(".gallery a").click(function(event){
-				event.preventDefault();
+	/* Update overlay image and caption
+	   with the image that was clicked on
+	   by using updateImage function */
+	updateImage(imageLocation, imageCaption);
 
-				var imageLocation = $(this).attr("href");
-				var imageCaption = $(this).attr("title");
+	// Show the overlay
+	$overlay.css("display", "flex");
+});	
 
-				// give index the current image's index value	
-  			$index = $(this).index();
-  			console.log($index);
+// LIGHTBOX ARROWS
 
-				/* Update overlay image and caption
-				   with the image that was clicked on
-				   by using updateImage function */
-				updateImage(imageLocation, imageCaption);
+//Arrows function
+var arrows = function( left ) {
+  //set arrows to true to move backwards in the index
 
-				// Show the overlay
-				$overlay.css("display", "flex");
-		});	
+  // if right arrow is clicked, add 1 to index
+  // else (if left arrow is clicked) subtract 1
+  if(!left) { $index++; }
+  else { $index--; }
 
-// MAKE ARROWS WORK
+  //if at the end of gallery,
+  //jump to beginning & vice versa
+  if ($index < 0) { $index = $galleryLength;}
+  if ($index > $galleryLength) { $index = 0; }
 
-		//Arrows function
-		var arrows = function( left ) {
-		  //set arrows to true to move backwards in the index
+  // Get next <a>
+  var newImgSelected = $(".gallery a").get($index);
 
-		  // if right arrow is clicked, add 1 to index
-		  // else (if right left arrow is clicked) subtract 1
-		  if(!left) { $index++; }
-		  else { $index--; }
+  //grab link information
+  var imageLocation = $(newImgSelected).attr("href");
+  var imageCaption =  $(newImgSelected).attr("title");
 
-		  //if at the end of gallery,
-		  //jump to beginning & vice versa
-		  if ($index < 0) { $index = $galleryLength;}
-		  if ($index > $galleryLength) { $index = 0; }
+  //Update Overlay
+  updateImage(imageLocation, imageCaption);
+};
 
-		  // Get next <a>
-		  var newImgSelected = $(".gallery a").get($index);
+//BUTTON EVENTS
+	// if left arrow or key 37 is pressed, go left
+	// if right arrow or key 39 is pressed, go right
 
-		  //grab link information
-		  var imageLocation = $(newImgSelected).attr("href");
-		  var imageCaption =  $(newImgSelected).attr("title");
+$(document).on( "keydown", function( event ) {
 
-		  //Update Overlay
-		  updateImage(imageLocation, imageCaption);
-		};
+	if ( $overlay.css('display') === 'flex' ) {
+		// left keydown
+		if (event.which === 37) {
+			arrows(true);
+	  	console.log($index + ' left');
+		}
+		// right keydown
+		if (event.which === 39) {
+			arrows();
+	  	console.log($index + ' right');
+		}
+	}
+});
 
-		console.log($index);
+// left arrow click
+$(".arrow-l").click(function(event){
+  arrows(true);
+  console.log($index + ' left');
+});
 
-		//Button events
-
-		 $(".arrow-l").click(function(event){
-		  arrows(true);
-		  console.log($index + ' left');
-		});
-
-		$(".arrow-r").click(function(event){
-		  arrows();
-		  console.log($index + ' right');
-		});
+// right arrow click
+$(".arrow-r").click(function(event){
+  arrows();
+  console.log($index + ' right');
+});
 
 //DISABLE OVERLAY
 
-		//When overlay is clicked
-		$XButton.click(function(){
-			// Hide the overlay
-			$overlay.hide();
-		});
+//When exit button is clicked
+$XButton.click(function(){
+	// Hide the overlay
+	$overlay.hide();
+});

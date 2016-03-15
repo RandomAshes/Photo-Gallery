@@ -150,25 +150,27 @@ button {
 	background: url(../img/icons.png);
   background-repeat: no-repeat;
   cursor: pointer;
-  min-width: 28px;
   min-height: 36px;
 }
 
 .x-button {
 	align-self: flex-end;
+	background-position: -28px 0;
+	min-width: 28px;
 }
 
 .arrow-l,
 .arrow-r {
 	 align-self: center;
+	 min-width: 21px;
 }
 
 .arrow-l {
-	background-position: -51px 0;
+	background-position: -58px 0;
 }
 
 .arrow-r {
-	background-position: -109px 0;
+	background-position: -116px 0;
 }
 
 
@@ -218,6 +220,11 @@ button {
 	max-width: 800px;
 	max-height: 500px
 	}
+
+	.x-button {
+	align-self: flex-end;
+	background-position: 0 0;
+}
 	
 }
 
