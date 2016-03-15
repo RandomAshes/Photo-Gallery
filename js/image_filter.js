@@ -20,7 +20,7 @@
 				}
 
 				img.element.style.display = index === -1 ? 'none' : ''; // Show / hide
-		})
+		});
 	}
 
 	if ('oninput' in $search[0]) {								// If browser supports input event
