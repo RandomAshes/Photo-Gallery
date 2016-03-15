@@ -112,9 +112,11 @@ section.wrap {
 	display: none;
 	text-align: center;
 	line-height: 2em;
+	padding: 0 5%;
 
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
 }
 
 #overlayContent {
@@ -142,22 +144,32 @@ button {
 	outline: none;
 }
 
+.x-button,
 .arrow-l,
 .arrow-r {
-	background: url(../img/arrow-icons.png);
+	background: url(../img/icons.png);
   background-repeat: no-repeat;
   cursor: pointer;
-  width: 23px;
-  height: 36px;
-
-  align-self: center;
+  min-width: 28px;
+  min-height: 36px;
 }
+
+.x-button {
+	align-self: flex-end;
+}
+
+.arrow-l,
 .arrow-r {
-	background-position: -46px 0;
+	 align-self: center;
 }
 
+.arrow-l {
+	background-position: -51px 0;
+}
 
-
+.arrow-r {
+	background-position: -109px 0;
+}
 
 
 /************************* Media Queries 
