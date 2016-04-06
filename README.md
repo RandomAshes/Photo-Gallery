@@ -5,4 +5,4 @@ In this project I created my own jquery image gallery, lightbox, and live image 
 Made as a project for TeamTreehouse's Techdegree program.
 
 Click for demo:
-http://randomashes.github.io/Project-4--Interactive-Photo-Gallery/
+http://randomashes.github.io/Photo-Gallery/
